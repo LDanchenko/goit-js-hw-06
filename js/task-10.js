@@ -7,7 +7,7 @@ createButton.addEventListener('click', () => {
   if (!inputAmount.value) {
     alert('Empty counter');
   } else {
-    destroyBoxes();
+    // destroyBoxes();
     overlayDiv.append(...createBoxes(inputAmount.value));
   }
 });
@@ -18,12 +18,11 @@ destroyButton.addEventListener('click', () => {
 
 function createBoxes(amount) {
   const divArray = [];
-  const height = 30;
-  const width = 30;
+  const size = 30;
   for (let i = 0; i < amount; i += 1) {
     const div = document.createElement('div');
-    div.style.height = `${height + i * 10}px`;
-    div.style.width = `${width + i * 10}px`;
+    div.style.height = `${size + i * 10}px`;
+    div.style.width = `${size + i * 10}px`;
     div.style.backgroundColor = getRandomHexColor();
     divArray.push(div);
   }
