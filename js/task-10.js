@@ -7,13 +7,14 @@ createButton.addEventListener('click', () => {
   if (!inputAmount.value) {
     alert('Empty counter');
   } else {
-    // destroyBoxes();
     overlayDiv.append(...createBoxes(inputAmount.value));
   }
 });
 
 destroyButton.addEventListener('click', () => {
   destroyBoxes();
+  const inputAmount = document.querySelector('#controls > input');
+  inputAmount.value = '';
 });
 
 function createBoxes(amount) {
